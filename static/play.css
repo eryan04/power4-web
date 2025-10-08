@@ -1,0 +1,14 @@
+h1 {
+    text-shadow: 0 0 10px rgb(15, 21, 135), 0 0 20px rgb(6, 24, 156);;
+    text-align: center;
+    color: rgb(0, 76, 255);
+}
+
+button {
+    color: white;
+    background-color: rgb(7, 31, 251);
+    text-align: center;
+    margin: 8px;
+    padding: 10px 29px;
+    font-size: 17px;
+}

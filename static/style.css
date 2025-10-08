@@ -1,0 +1,18 @@
+.start4 {
+    background-color: rgba(5, 27, 124, 0.614);
+    text-align: center;
+}
+
+h1 {
+    text-shadow: 0 0 10px rgb(139, 45, 19), 0 0 20px rgb(251, 58, 24);;
+    text-align: center;
+    color: red
+}
+
+button {
+    margin: 8px;
+    padding: 10px 29px;
+    font-size: 17px;
+    color: white;
+    background-color: rgb(203, 35, 35);
+}
