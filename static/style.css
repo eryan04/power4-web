@@ -1,12 +1,42 @@
 .start4 {
-    background-color: rgba(5, 27, 124, 0.614);
+    background: #1e3a8a;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     text-align: center;
+    color: white;
+    max-width: 400px;
+    margin: 50px auto;
 }
 
 h1 {
     text-shadow: 0 0 10px rgb(139, 45, 19), 0 0 20px rgb(251, 58, 24);;
     text-align: center;
-    color: red
+    color: red;
+    font-size: 52px;
+}
+
+h2 {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 29px;
+    text-decoration: underline;
+}
+
+label {
+    color: white;
+    display: block;       /* force le label à prendre toute la ligne */
+    margin-bottom: 5px;   /* petit espace seulement */
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+input {
+    margin-bottom: 15px;  
+    padding: 5px;
+    width: 70%;
 }
 
 button {

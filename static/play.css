@@ -1,14 +1,50 @@
 h1 {
-    text-shadow: 0 0 10px rgb(15, 21, 135), 0 0 20px rgb(6, 24, 156);;
+    color: #0a2a7a;
+    font-size: 52px;
+    font-weight: bold;
     text-align: center;
-    color: rgb(0, 76, 255);
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 119, 255, 0.6),
+                0 0 20px rgba(0, 119, 255, 0.4);
 }
 
 button {
     color: white;
     background-color: rgb(7, 31, 251);
-    text-align: center;
     margin: 8px;
     padding: 10px 29px;
     font-size: 17px;
 }
+
+body{
+    text-align: center;
+}
+
+.tab4 {
+  margin: 50px auto;
+  background: #1e3a8a;
+  border-collapse: separate;
+  border-spacing: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  display: inline-block;   /* le tableau prend juste sa largeur réelle */
+  text-align: center;
+  margin-top: 5px;
+}
+
+caption {
+    font-weight: bold;   
+    font-size: 29px;     
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+td {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;         /* cercle */
+  background: #0b1025;        /* couleur "vide" */
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.7);
+}
+

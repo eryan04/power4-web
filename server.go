@@ -15,7 +15,7 @@ func Homehandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func Playhandler(w http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("play.html")
+	template, err := template.ParseFiles("play.html", "templates/tab.html")
 	if err != nil {
 		log.Fatal(err)
 	}
