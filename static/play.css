@@ -1,50 +1,62 @@
-h1 {
-    color: #0a2a7a;
-    font-size: 52px;
-    font-weight: bold;
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #f2f2f2;
     text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(0, 119, 255, 0.6),
-                0 0 20px rgba(0, 119, 255, 0.4);
+    margin: 0;
+    padding: 30px;
 }
 
-button {
-    color: white;
-    background-color: rgb(7, 31, 251);
-    margin: 8px;
-    padding: 10px 29px;
-    font-size: 17px;
+h2 {
+    color: #ff4040;
 }
 
-body{
-    text-align: center;
-}
-
-.tab4 {
-  margin: 50px auto;
-  background: #1e3a8a;
-  border-collapse: separate;
-  border-spacing: 10px;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  display: inline-block;   /* le tableau prend juste sa largeur réelle */
-  text-align: center;
-  margin-top: 5px;
-}
-
-caption {
-    font-weight: bold;   
-    font-size: 29px;     
-    margin-bottom: 15px;
-    text-decoration: underline;
+table {
+    margin: 30px auto;
+    border-collapse: collapse;
 }
 
 td {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;         /* cercle */
-  background: #0b1025;        /* couleur "vide" */
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.7);
+    width: 60px;
+    height: 60px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background-color: #222;
 }
 
+.p1 {
+    background-color: red;
+    box-shadow: 0 0 8px red;
+}
+
+.p2 {
+    background-color: yellow;
+    box-shadow: 0 0 8px yellow;
+}
+
+.empty {
+    background-color: #111;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+form {
+    display: inline-block;
+    margin: 5px;
+}
+
+p {
+    font-size: 1.1em;
+}

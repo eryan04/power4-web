@@ -1,0 +1,24 @@
+{{ define "result" }}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Résultat</title>
+    <link rel="stylesheet" href="/static/play.css">
+</head>
+<body>
+    <h1>Résultat de la partie</h1>
+
+    {{if eq .Winner 1}}
+        <p>🎉 Victoire de {{.Player1}} !</p>
+    {{else if eq .Winner 2}}
+        <p>🎉 Victoire de {{.Player2}} !</p>
+    {{else}}
+        <p>🤝 Match nul !</p>
+    {{end}}
+
+    <form action="/reset" method="POST">
+        <button type="submit">Nouvelle partie</button>
+    </form>
+</body>
+</html>
+{{ end }}

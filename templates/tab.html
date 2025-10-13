@@ -1,64 +1,29 @@
 {{ define "tab" }}
-<div class="tab4">
-    <table>
-        <caption>Click on a column to begin the battle </caption>
-        <tbody>
-            <!-- data-row: ligne(0-5 = 6), data-col: colonne(0-6 = 7) -->
-            <tr>
-            <td data-row="0" data-col="0"><span class="slot"></span></td>
-            <td data-row="0" data-col="1"><span class="slot"></span></td>
-            <td data-row="0" data-col="2"><span class="slot"></span></td>
-            <td data-row="0" data-col="3"><span class="slot"></span></td>
-            <td data-row="0" data-col="4"><span class="slot"></span></td>
-            <td data-row="0" data-col="5"><span class="slot"></span></td>
-            <td data-row="0" data-col="6"><span class="slot"></span></td>
-            </tr>
-            <tr>
-            <td data-row="1" data-col="0"><span class="slot"></span></td>
-            <td data-row="1" data-col="1"><span class="slot"></span></td>
-            <td data-row="1" data-col="2"><span class="slot"></span></td>
-            <td data-row="1" data-col="3"><span class="slot"></span></td>
-            <td data-row="1" data-col="4"><span class="slot"></span></td>
-            <td data-row="1" data-col="5"><span class="slot"></span></td>
-            <td data-row="1" data-col="6"><span class="slot"></span></td>
-            </tr>
-            <tr>
-            <td data-row="2" data-col="0"><span class="slot"></span></td>
-            <td data-row="2" data-col="1"><span class="slot"></span></td>
-            <td data-row="2" data-col="2"><span class="slot"></span></td>
-            <td data-row="2" data-col="3"><span class="slot"></span></td>
-            <td data-row="2" data-col="4"><span class="slot"></span></td>
-            <td data-row="2" data-col="5"><span class="slot"></span></td>
-            <td data-row="2" data-col="6"><span class="slot"></span></td>
-            </tr>
-            <tr>
-            <td data-row="3" data-col="0"><span class="slot"></span></td>
-            <td data-row="3" data-col="1"><span class="slot"></span></td>
-            <td data-row="3" data-col="2"><span class="slot"></span></td>
-            <td data-row="3" data-col="3"><span class="slot"></span></td>
-            <td data-row="3" data-col="4"><span class="slot"></span></td>
-            <td data-row="3" data-col="5"><span class="slot"></span></td>
-            <td data-row="3" data-col="6"><span class="slot"></span></td>
-            </tr>
-            <tr>
-            <td data-row="4" data-col="0"><span class="slot"></span></td>
-            <td data-row="4" data-col="1"><span class="slot"></span></td>
-            <td data-row="4" data-col="2"><span class="slot"></span></td>
-            <td data-row="4" data-col="3"><span class="slot"></span></td>
-            <td data-row="4" data-col="4"><span class="slot"></span></td>
-            <td data-row="4" data-col="5"><span class="slot"></span></td>
-            <td data-row="4" data-col="6"><span class="slot"></span></td>
-            </tr>
-            <tr>
-            <td data-row="5" data-col="0"><span class="slot"></span></td>
-            <td data-row="5" data-col="1"><span class="slot"></span></td>
-            <td data-row="5" data-col="2"><span class="slot"></span></td>
-            <td data-row="5" data-col="3"><span class="slot"></span></td>
-            <td data-row="5" data-col="4"><span class="slot"></span></td>
-            <td data-row="5" data-col="5"><span class="slot"></span></td>
-            <td data-row="5" data-col="6"><span class="slot"></span></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-{{end}}
+<h2>Partie : {{.Player1}} vs {{.Player2}}</h2>
+<p>Tour du joueur : {{if eq .Current 1}}{{.Player1}}{{else}}{{.Player2}}{{end}}</p>
+
+<table>
+  <tr>
+    {{range .ColumnIndexes}}
+    <td>
+      <form action="/play" method="POST">
+        <input type="hidden" name="col" value="{{.}}">
+        <button type="submit">▼</button>
+      </form>
+    </td>
+    {{end}}
+  </tr>
+
+  {{range .Grid}}
+  <tr>
+    {{range .}}
+    <td class="{{if eq . 1}}p1{{else if eq . 2}}p2{{else}}empty{{end}}"></td>
+    {{end}}
+  </tr>
+  {{end}}
+</table>
+
+<form action="/reset" method="POST">
+  <button type="submit">Recommencer</button>
+</form>
+{{ end }}

@@ -1,15 +1,19 @@
 {{ define "start" }}
-<div class="start4">
-    <h2> Welcome to the game </h2>
-    <form action="/play" method="POST">
-    <label>Player 1 :</label><br>
-    <input type="text" name="name" required><br>
-    <br>
-    <label>Player 2 :</label><br>
-    <input type="text" name="name" required><br>
-    <br>
-    <button type="submit">Easy</button>
-    <button type="submit">Medium</button>
-    <button type="submit">Hard</button>  
-</div>
-{{end}}
+<h1>🔥 Bienvenue sur Puissance 4 🔥</h1>
+<form action="/start" method="POST">
+  <label>Joueur 1 :</label>
+  <input type="text" name="p1" placeholder="Nom du joueur 1" required /><br>
+
+  <label>Joueur 2 :</label>
+  <input type="text" name="p2" placeholder="Nom du joueur 2" required /><br>
+
+  <label>Difficulté :</label>
+  <select name="difficulty">
+    <option value="easy">Facile</option>
+    <option value="normal">Moyen</option>
+    <option value="hard">Difficile</option>
+  </select><br>
+
+  <button type="submit">Commencer la partie</button>
+</form>
+{{ end }}
