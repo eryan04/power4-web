@@ -107,3 +107,17 @@ func resetHandler(w http.ResponseWriter, r *http.Request) {
 	mu.Unlock()
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
+
+func replayHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
+	}
+
+	mu.Lock()
+	prev := game
+	game = newGame(prev.Difficulty, prev.Player1, prev.Player2)
+	mu.Unlock()
+
+	http.Redirect(w, r, "/", http.StatusSeeOther)
+}

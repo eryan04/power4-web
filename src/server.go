@@ -10,6 +10,7 @@ func Server() {
 	http.HandleFunc("/start", startHandler)
 	http.HandleFunc("/play", playHandler)
 	http.HandleFunc("/reset", resetHandler)
+	http.HandleFunc("/replay", replayHandler)
 
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
